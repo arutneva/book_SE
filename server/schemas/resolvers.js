@@ -37,6 +37,8 @@ const resolvers = {
         { new: true, runValidators: true }
       );
 
+      return updatedUser;
+
       addUser: async (parent, { username, email, password }) => {
         const user = await User.create({ username, email, password });
         const token = signToken(user);
